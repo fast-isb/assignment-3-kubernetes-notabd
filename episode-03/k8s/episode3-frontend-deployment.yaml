@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: episode3-frontend
+  namespace: development
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: episode3-frontend
+  template:
+    metadata:
+      labels:
+        app: episode3-frontend
+    spec:
+      containers:
+      - name: episode3-frontend
+        image: notabd/episode3-frontend:latest
+        ports:
+        - containerPort: 3000
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"

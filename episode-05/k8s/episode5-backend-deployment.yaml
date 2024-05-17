@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: episode5-backend
+  namespace: development
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: episode5-backend
+  template:
+    metadata:
+      labels:
+        app: episode5-backend
+    spec:
+      containers:
+      - name: episode5-backend
+        image: notabd/episode5-backend:latest
+        ports:
+        - containerPort: 8000
+        resources:
+          limits:
+            memory: "512Mi"
+            cpu: "500m"
+          requests:
+            memory: "256Mi"
+            cpu: "250m"
+        env:
+        - name: NODE_ENV
+          value: "production"

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: episode3-backend-service
+  namespace: development
+spec:
+  selector:
+    app: episode3-backend
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8000
