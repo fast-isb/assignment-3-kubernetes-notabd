@@ -1,0 +1,111 @@
+version: '3.8'
+
+services:
+  episode-01-backend:
+    build:
+      context: ./episode-01/backend
+      dockerfile: Dockerfile
+    ports:
+      - '8001:8000'
+    environment:
+      - NODE_ENV=production
+      - MONGO_DB_SECRET=mongodb+srv://i211183:bb3ard@clusterrrr.rj6gezd.mongodb.net/mydatabase?retryWrites=true&w=majority&appName=Clusterrrr
+    networks:
+      - mern-network
+
+  episode-01-frontend:
+    build:
+      context: ./episode-01/fronted
+      dockerfile: Dockerfile
+    ports:
+      - '3001:3000'
+    networks:
+      - mern-network
+
+  episode-02-backend:
+    build:
+      context: ./episode-02/backend
+      dockerfile: Dockerfile
+    ports:
+      - '8002:8000'
+    environment:
+      - NODE_ENV=production
+      - MONGO_DB_SECRET=mongodb+srv://i211183:bb3ard@clusterrrr.rj6gezd.mongodb.net/mydatabase?retryWrites=true&w=majority&appName=Clusterrrr
+    networks:
+      - mern-network
+
+  episode-02-frontend:
+    build:
+      context: ./episode-02/fronted
+      dockerfile: Dockerfile
+    ports:
+      - '3002:3000'
+    networks:
+      - mern-network
+
+  episode-03-backend:
+    build:
+      context: ./episode-03/backend
+      dockerfile: Dockerfile
+    ports:
+      - '8003:8000'
+    environment:
+      - NODE_ENV=production
+      - MONGO_DB_SECRET=mongodb+srv://i211183:bb3ard@clusterrrr.rj6gezd.mongodb.net/mydatabase?retryWrites=true&w=majority&appName=Clusterrrr
+    networks:
+      - mern-network
+
+  episode-03-frontend:
+    build:
+      context: ./episode-03/fronted
+      dockerfile: Dockerfile
+    ports:
+      - '3003:3000'
+    networks:
+      - mern-network
+
+  episode-04-backend:
+    build:
+      context: ./episode-04/backend
+      dockerfile: Dockerfile
+    ports:
+      - '8004:8000'
+    environment:
+      - NODE_ENV=production
+      - MONGO_DB_SECRET=mongodb+srv://i211183:bb3ard@clusterrrr.rj6gezd.mongodb.net/mydatabase?retryWrites=true&w=majority&appName=Clusterrrr
+    networks:
+      - mern-network
+
+  episode-04-frontend:
+    build:
+      context: ./episode-04/fronted
+      dockerfile: Dockerfile
+    ports:
+      - '3004:3000'
+    networks:
+      - mern-network
+
+  episode-05-backend:
+    build:
+      context: ./episode-05/backend
+      dockerfile: Dockerfile
+    ports:
+      - '8005:8000'
+    environment:
+      - NODE_ENV=production
+      - MONGO_DB_SECRET=mongodb+srv://i211183:bb3ard@clusterrrr.rj6gezd.mongodb.net/mydatabase?retryWrites=true&w=majority&appName=Clusterrrr
+    networks:
+      - mern-network
+
+  episode-05-frontend:
+    build:
+      context: ./episode-05/fronted
+      dockerfile: Dockerfile
+    ports:
+      - '3005:3000'
+    networks:
+      - mern-network
+
+networks:
+  mern-network:
+    driver: bridge
