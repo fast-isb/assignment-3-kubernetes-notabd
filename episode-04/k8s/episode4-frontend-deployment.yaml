@@ -17,11 +17,11 @@ spec:
       - name: episode4-frontend
         image: notabd/episode4-frontend:latest
         ports:
-        - containerPort: 3000
+        - containerPort: 80
         resources:
-          limits:
-            memory: "512Mi"
-            cpu: "500m"
           requests:
-            memory: "256Mi"
-            cpu: "250m"
+            cpu: 250m
+            memory: 256Mi
+          limits:
+            cpu: 500m
+            memory: 512Mi
